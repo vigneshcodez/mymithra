@@ -1,0 +1,50 @@
+<div class="container-fluid p-0 navbarstyles mt-0">
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid ">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav mx-auto ">
+          <li class="nav-item">
+            <a class="nav-link  colorprimary mobileviewnavbartextcolour" aria-current="page"
+              href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link   mobileviewnavbartextcolour" href="{% url 'about' %}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link   mobileviewnavbartextcolour"
+              href="{% url 'subcategory' 'Mattress' %}">Mattresses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link   mobileviewnavbartextcolour"
+              href="{% url 'subcategory' 'Pillows' %}">Pillows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link   mobileviewnavbartextcolour"
+              href="{% url 'subcategory' 'Sofa Makeover' %}">Sofa Makeover</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link   mobileviewnavbartextcolour"
+              href="{% url 'subcategory' 'Furniture' %}">Furniture</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link   mobileviewnavbartextcolour"
+              href="{% url 'subcategory' 'Bedroom accessories' %}">Bedroom Accessories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link   mobileviewnavbartextcolour" href="{% url 'awards' %}">Awards</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link   mobileviewnavbartextcolour"
+              href="{% url 'subcategory' 'others' %}">Others</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+

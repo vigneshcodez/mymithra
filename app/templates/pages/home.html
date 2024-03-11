@@ -1,0 +1,358 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<!-- header starts -->
+{% include 'inc/header.html' %}
+<!-- header ends -->
+
+
+
+
+
+
+
+
+<!-- navbar starts -->
+{% include 'inc/navbar.html' %}
+<!-- navbar ends -->
+
+
+<div class="container text-center showinmobileview mt-5">
+  <br>
+  <img src="{% static 'appimages/mithralogo.png' %}" class="showinmobileview" width="80%" class="p-4" alt="">
+</div>
+
+
+
+
+<!-- banner start -->
+<div class="container-fluid">
+  <img src="{% static 'appimages/coverpic.jpeg' %}" class="my-3" width="100%" alt="">
+</div>
+<!-- banner ends -->
+
+
+
+<br>
+<br>
+
+
+<!-- company promices starts -->
+<div class="container  mt-1">
+  <div class="row mx-5 text-center">
+
+    <div class="col-md-3 my-3">
+      <div><img src="{% static 'appimages/robbionimage.png' %}" alt="" width="30px"><span
+          class="ms-3 colorsecondary fw-bold">Supreme Quality</span></div>
+    </div>
+
+    <div class="col-md-3 my-3">
+      <div><img src="{% static 'appimages/robbionimage.png' %}" alt="" width="30px"><span
+          class="ms-3 colorsecondary fw-bold">Earned Trust</span></div>
+    </div>
+
+    <div class="col-md-3 my-3">
+      <div><img src="{% static 'appimages/messagepng.png' %}" alt="" width="30px"><span
+          class="ms-3 colorsecondary fw-bold">Hygiene</span></div>
+    </div>
+
+    <div class="col-md-3 my-3">
+      <div><img src="{% static 'appimages/messagepng.png' %}" alt="" width="30px"><span
+          class="ms-3 colorsecondary fw-bold">Support on Call</span></div>
+    </div>
+  </div>
+</div>
+<!-- company promices ends -->
+
+
+
+
+
+
+
+
+<!-- about company starts-->
+<div class="container mb-5 mt-5">
+  <h1 class="colorprimary text-center mb-4">About Mithra Beds and Sofas</h1>
+  <p class="colorsecondary text-center lh-lg ">Mitha association with Furniture needs no introduction. Mithra is the
+    world’s largest manufacturer of moulded furniture & India’s favourite furniture brand with 50 stores & 3,000+
+    distributors. Our furniture has eternally been a part of Indian home’s interiors, knowingly or unknowingly taking
+    space in the form of a simple plastic chair in your living room or an entire furniture set in your bedrooms or
+    offices adding both emotion and charm to your sheen interiors.</p>
+</div>
+<!-- about company ends -->
+
+
+
+
+
+
+<!-- category starts-->
+<div class="container mt-5">
+  <h1 class="colorprimary text-center mb-4">Complete your Sleep Suite</h1>
+  <p class="colorsecondary text-center lh-lg ">
+    We have entire range of exclusive products for comfortable sound sleep...
+  </p>
+  <div class="row">
+    {% for item in category %}
+    <div class="col-md-4 my-3">
+      <div class="home-category-image-container" style="background-image: url({{item.image.url}});">
+        <a href="{% url 'subcategory' item.name %}"> <button
+            class="home-category-image-container-heading">{{item.name}}<i
+              class="fa-solid fa-arrow-right ms-3"></i></button></a>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+<!-- category ends -->
+
+
+
+
+
+
+<!-- why ilavam panju starts -->
+<div class="container-fluid p-5" style="background-color: #f5f5f5;">
+  <h1 class="colorprimary text-center mb-5 mt-3">Why Ilavam panju ?</h1>
+  <div class="row">
+
+    <div class="col-md-4 my-3 text-center">
+      <img src="{% static 'appimages/waterresistant.png' %}" width="100px" alt="">
+      <h5 class="colorprimary fw-bold mt-3">Water Resistant</h5>
+      <p class="colorsecondary text-center lh-lg ">Won’t Absorb Sweat, devoid of <br> Chemical odour</p>
+    </div>
+
+    <div class="col-md-4 text-center  my-3 ">
+      <img src="{% static 'appimages/regulateheats.png' %}" width="100px" alt="">
+      <h5 class="colorprimary fw-bold mt-3">Regulates Heat</h5>
+      <p class="colorsecondary text-center lh-lg ">Keep body cool in summer and <br>warm in winter </p>
+    </div>
+
+    <div class="col-md-4 text-center  my-3 ">
+      <img src="{% static 'appimages/allergen.png' %}" width="100px" alt="">
+      <h5 class="colorprimary fw-bold mt-3">Hypo Allergenic</h5>
+      <p class="colorsecondary text-center lh-lg ">Prevents allergic skin reaction,<br> dust mites or fungus formation.
+      </p>
+    </div>
+
+    <div class="col-md-4 text-center  my-3 ">
+      <img src="{% static 'appimages/biological.png' %}" width="100px" alt="">
+      <h5 class="colorprimary fw-bold mt-3">Bio Degradable</h5>
+      <p class="colorsecondary text-center lh-lg ">Naturally extract from tree <br> and easily decomposable</p>
+    </div>
+
+    <div class="col-md-4 text-center  my-3 ">
+      <img src="{% static 'appimages/recycle.png' %}" width="100px" alt="">
+      <h5 class="colorprimary fw-bold mt-3">Recyclable</h5>
+      <p class="colorsecondary text-center lh-lg ">Won’t Absorb Sweat, devoid of <br> Chemical odour</p>
+    </div>
+
+    <div class="col-md-4 text-center  my-3 ">
+      <img src="{% static 'appimages/cotton.png' %}" width="100px" alt="">
+      <h5 class="colorprimary fw-bold mt-3">Pure Cotton</h5>
+      <p class="colorsecondary text-center lh-lg ">Outer cover is pure cotton no <br> polyester </p>
+    </div>
+  </div>
+</div>
+<!-- why ilavam panju ends -->
+
+
+
+
+<br>
+<br>
+
+
+<!-- testimonial starts -->
+<div class="container ">
+  <h1 class="colorprimary text-center mb-5 mt-3">Testimonials</h1>
+  <div class="row ">
+
+    <div class="col-md-4 my-1">
+      <div class="card p-3 text-center px-4">
+
+        <div class="user-image mb-3">
+
+          <img src="https://i.imgur.com/PKHvlRS.jpg" class="rounded-circle" width="80">
+
+        </div>
+
+        <div class="user-content">
+
+          <h5 class="mb-0">Bruce Hardy</h5>
+          <span>Software Developer</span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.</p>
+
+        </div>
+
+        <div class="ratings">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-4 my-1">
+      <div class="card p-3 text-center px-4">
+
+        <div class="user-image mb-3">
+
+          <img src="https://i.imgur.com/PKHvlRS.jpg" class="rounded-circle" width="80">
+
+        </div>
+
+        <div class="user-content">
+
+          <h5 class="mb-0">Bruce Hardy</h5>
+          <span>Software Developer</span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.</p>
+
+        </div>
+
+        <div class="ratings">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="col-md-4 my-1">
+      <div class="card p-3 text-center px-4">
+
+        <div class="user-image mb-3">
+
+          <img src="https://i.imgur.com/PKHvlRS.jpg" class="rounded-circle" width="80">
+
+        </div>
+
+        <div class="user-content">
+
+          <h5 class="mb-0">Bruce Hardy</h5>
+          <span>Software Developer</span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.</p>
+
+        </div>
+
+        <div class="ratings">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- testimonial ends -->
+
+
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+<!-- address info -->
+<div class="container">
+  <h1 class="colorprimary text-center mt-3 mb-5">Contact</h1>
+  <div class="row">
+    <div class="col-md-6 ">
+      <h2 class="colorprimary fw-bold">EXPERIENCE CENTER NEAR YOU</h2>
+      <h4 class="colorsecondary">Address :</h4>
+      <p class="colorsecondary mb-3 fw-light">No.82/85, Sthithi Square Complex, Pankaja Mills Rd, opp. New Indian
+        Express,
+        Krishnaswamy Nagar, Sowripalayam Pirivu, Ramanathapuram, Coimbatore, Tamil Nadu 641045</p>
+
+      <h4 class="colorsecondary mb-1">Mobile :</h4>
+      <p class="colorsecondary mb-3  fw-light">8784594525</p>
+
+      <h4 class="colorsecondary">Office</h4>
+      <p class="colorsecondary mb-3 fw-light">0422 243415</p>
+
+      <h4 class="colorsecondary">Support & Enquiry :</h4>
+      <p class="colorsecondary mb-3 fw-light">nfo@mithraenterprises.com</p>
+
+
+
+
+    </div>
+    <div class="col-md-6">
+      <div class="">
+        <div class="form-card2">
+          <form class="form">
+            <p class="form-heading">Get In Touch</p>
+
+            <div class="form-field">
+              <input required="" placeholder="Name" class="input-field" type="text" />
+            </div>
+
+            <div class="form-field">
+              <input required="" placeholder="Email" class="input-field" type="email" />
+            </div>
+
+            <div class="form-field">
+              <input required="" placeholder="Mobile" class="input-field" type="number" />
+            </div>
+
+            <div class="form-field">
+              <textarea required="" placeholder="Message" cols="30" rows="3" class="input-field"></textarea>
+            </div>
+
+            <button class="sendMessage-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- address info -->
+
+<!-- map start -->
+<div class="container my-4">
+  <div class="row">
+    <h1 class="colorprimary text-center mb-5 mt-3">Find My Way</h1>
+    <div class="col-md-12">
+      <img src="{% static 'appimages/map.webp' %}" width="100%" height="500px" alt="">
+    </div>
+  </div>
+</div>
+<!-- map ends -->
+
+
+
+
+<!-- footer starts -->
+{% include 'inc/footer.html' %}
+<!-- footer ends -->
+
+{% endblock content %}

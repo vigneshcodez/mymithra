@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- header starts -->
+{% include 'inc/header.html' %}
+<!-- header ends -->
+
+
+<!-- navbar starts -->
+{% include 'inc/navbar.html' %}
+<!-- navbar ends -->
+
+<!-- category starts-->
+<div class="container my-5">
+  {% if subcategory %}
+  <h1 class="colorprimary text-center mb-1">Products in {{subcategory}}</h1>
+  <p class="colorsecondary text-center lh-lg ">
+    We have entire range of exclusive products for comfortable sound sleep...
+  </p>
+  <div class="row">
+
+
+    {% for item in products %}
+    <div class="col-md-4 my-3">
+      <div class="home-category-image-container" style="background-image: url({{item.image.url}});">
+        <a href="{% url 'detailedview' item.name %}"> <button
+            class="home-category-image-container-heading">{{item.name}} <i
+              class="fa-solid fa-arrow-right ms-3"></i></button></a>
+
+      </div>
+    </div>
+
+    {% endfor %}
+
+    {% else %}
+    <h1 class="colorprimary text-center mb-1">Sub categories in {{products}}</h1>
+    <p class="colorsecondary text-center lh-lg ">
+      No products found try after some time...
+    </p>
+    {% endif %}
+  </div>
+</div>
+<!-- category ends -->
+
+
+{% include 'inc/footer.html' %}
+{% endblock content %}

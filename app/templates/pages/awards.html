@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- header starts -->
+{% include 'inc/header.html' %}
+<!-- header ends -->
+
+
+<!-- navbar starts -->
+{% include 'inc/navbar.html' %}
+<!-- navbar ends -->
+
+
+
+<div class="container">
+  <h2 class="colorprimary fw-bold text-center text-capitalize">Awards</h2>
+  <p class="text-center lh-lg colorsecondary">You are viewing the achivements of Mithra</p>
+
+  <div class="row">
+    {% for item in awards %}
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">
+          <h1>{{item.name}}</h1>
+        </div>
+        <div class="card-body p-0">
+          <img src="{{item.image.url}}" class="card-img-top" alt="" style="height: 200px;">
+        </div>
+        <div class="card-footer">
+          {{item.description}}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+</div>
+
+{% include 'inc/footer.html' %}
+{% endblock content %}

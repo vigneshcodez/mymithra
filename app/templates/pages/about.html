@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- header starts -->
+{% include 'inc/header.html' %}
+<!-- header ends -->
+
+
+<!-- navbar starts -->
+{% include 'inc/navbar.html' %}
+<!-- navbar ends -->
+
+<div class="container-fluid my-5">
+  <img src="{% static 'appimages/aboutusimage.png' %}" width="100%" alt="">
+</div>
+
+<div class="container">
+  <h1 class="colorprimary fw-bold text-center text-capitalize">ABOUT MITHRA BEDS AND SOFAS</h1>
+<p class="text-center lh-lg colorsecondary">Nilkamal's association with Furniture needs no introduction. Nilkamal is the world's largest manufacturer of moulded furniture & India’s favourite furniture brand with 50 stores & 3,000+ distributors. Our furniture has eternally been a part of Indian home's interiors, knowingly or unknowingly taking space in the form of a simple plastic chair in your living room or an entire furniture set in your bedrooms or offices adding both emotion and charm to your sheen interiors.</p>
+</div>
+
+{% include 'inc/footer.html' %}
+{% endblock content %}
