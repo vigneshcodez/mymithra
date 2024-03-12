@@ -22,17 +22,46 @@
 
 <div class="container text-center showinmobileview mt-5">
   <br>
-  <img src="{% static 'appimages/mithralogo.png' %}" class="showinmobileview" width="80%" class="p-4" alt="">
+  <img src="{% static 'appimages/mithralogo.png' %}" class="showinmobileview my-3" width="80%" alt="">
 </div>
 
-
-
-
-<!-- banner start -->
-<div class="container-fluid">
-  <img src="{% static 'appimages/coverpic.jpeg' %}" class="my-3" width="100%" alt="">
+<!-- carousel starts -->
+<div id="carouselExampleIndicators" class="carousel slide mx-2 showinmobileview">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+      aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'appimages/Banner01.png' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'appimages/Banner02.png' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'appimages/Banner03.png' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
-<!-- banner ends -->
+
+<!-- carousel ends -->
+
+
+
+
+
 
 
 
@@ -45,22 +74,22 @@
   <div class="row mx-5 text-center">
 
     <div class="col-md-3 my-3">
-      <div><img src="{% static 'appimages/robbionimage.png' %}" alt="" width="30px"><span
+      <div><img src="{% static 'appimages/robbionimage.png' %}" class="promise-logo" alt=""><span
           class="ms-3 colorsecondary fw-bold">Supreme Quality</span></div>
     </div>
 
     <div class="col-md-3 my-3">
-      <div><img src="{% static 'appimages/robbionimage.png' %}" alt="" width="30px"><span
+      <div><img src="{% static 'appimages/robbionimage.png' %}" alt="" class="promise-logo"><span
           class="ms-3 colorsecondary fw-bold">Earned Trust</span></div>
     </div>
 
     <div class="col-md-3 my-3">
-      <div><img src="{% static 'appimages/messagepng.png' %}" alt="" width="30px"><span
+      <div><img src="{% static 'appimages/messagepng.png' %}" alt="" class="promise-logo2"><span
           class="ms-3 colorsecondary fw-bold">Hygiene</span></div>
     </div>
 
     <div class="col-md-3 my-3">
-      <div><img src="{% static 'appimages/messagepng.png' %}" alt="" width="30px"><span
+      <div><img src="{% static 'appimages/messagepng.png' %}" alt="" class="promise-logo2"><span
           class="ms-3 colorsecondary fw-bold">Support on Call</span></div>
     </div>
   </div>
@@ -76,7 +105,7 @@
 
 <!-- about company starts-->
 <div class="container mb-5 mt-5">
-  <h1 class="colorprimary text-center mb-4">About Mithra Beds and Sofas</h1>
+  <div class="colorprimary text-center mb-4 heading-size">About Mithra Beds and Sofas</div>
   <p class="colorsecondary text-center lh-lg ">Mitha association with Furniture needs no introduction. Mithra is the
     world’s largest manufacturer of moulded furniture & India’s favourite furniture brand with 50 stores & 3,000+
     distributors. Our furniture has eternally been a part of Indian home’s interiors, knowingly or unknowingly taking
@@ -92,7 +121,7 @@
 
 <!-- category starts-->
 <div class="container mt-5">
-  <h1 class="colorprimary text-center mb-4">Complete your Sleep Suite</h1>
+  <div class="colorprimary text-center mb-4 heading-size">Complete your Sleep Suite</div>
   <p class="colorsecondary text-center lh-lg ">
     We have entire range of exclusive products for comfortable sound sleep...
   </p>
@@ -100,9 +129,11 @@
     {% for item in category %}
     <div class="col-md-4 my-3">
       <div class="home-category-image-container" style="background-image: url({{item.image.url}});">
-        <a href="{% url 'subcategory' item.name %}"> <button
-            class="home-category-image-container-heading">{{item.name}}<i
-              class="fa-solid fa-arrow-right ms-3"></i></button></a>
+        <a href="{% url 'subcategory' item.name %}">
+          <button class="home-category-image-container-heading ">{{item.name}}<i
+              class="fa-solid fa-arrow-right ms-3"></i>
+          </button>
+        </a>
       </div>
     </div>
 
@@ -118,7 +149,7 @@
 
 <!-- why ilavam panju starts -->
 <div class="container-fluid p-5" style="background-color: #f5f5f5;">
-  <h1 class="colorprimary text-center mb-5 mt-3">Why Ilavam panju ?</h1>
+  <div class="colorprimary text-center mb-5 mt-3 heading-size">Why Ilavam panju ?</div>
   <div class="row">
 
     <div class="col-md-4 my-3 text-center">
@@ -170,7 +201,7 @@
 
 <!-- testimonial starts -->
 <div class="container ">
-  <h1 class="colorprimary text-center mb-5 mt-3">Testimonials</h1>
+  <div class="colorprimary text-center mb-5 mt-3 heading-size">Testimonials</div>
   <div class="row ">
 
     <div class="col-md-4 my-1">
@@ -192,14 +223,6 @@
 
         </div>
 
-        <div class="ratings">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-
-        </div>
-
       </div>
     </div>
 
@@ -222,13 +245,6 @@
 
         </div>
 
-        <div class="ratings">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-
-        </div>
 
       </div>
     </div>
@@ -244,21 +260,14 @@
         </div>
 
         <div class="user-content">
-
-          <h5 class="mb-0">Bruce Hardy</h5>
-          <span>Software Developer</span>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
             ea commodo consequat.</p>
-
         </div>
 
         <div class="ratings">
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
+          <h5 class="mb-0">Bruce Hardy</h5>
+          <span class="fw-light">- CEO, Reliance</span>
 
         </div>
 
@@ -284,22 +293,21 @@
 
 <!-- address info -->
 <div class="container">
-  <h1 class="colorprimary text-center mt-3 mb-5">Contact</h1>
+  <div class="colorprimary text-center mt-3 mb-5 heading-size">Contact</div>
   <div class="row">
     <div class="col-md-6 ">
       <h2 class="colorprimary fw-bold">EXPERIENCE CENTER NEAR YOU</h2>
-      <h4 class="colorsecondary">Address :</h4>
-      <p class="colorsecondary mb-3 fw-light">No.82/85, Sthithi Square Complex, Pankaja Mills Rd, opp. New Indian
-        Express,
-        Krishnaswamy Nagar, Sowripalayam Pirivu, Ramanathapuram, Coimbatore, Tamil Nadu 641045</p>
+      <h4 class="colorsecondary fontsize24">Address :</h4>
+      <p class="colorsecondary mb-3 fw-light">2001, Trichy road, Opposite Rajalakshmi Mills,<br> Near Srivari Trisara
+        Apartment, Coimbatore - 641005</p>
 
-      <h4 class="colorsecondary mb-1">Mobile :</h4>
-      <p class="colorsecondary mb-3  fw-light">8784594525</p>
+      <h4 class="colorsecondary mb-1 fontsize24">Mobile :</h4>
+      <p class="colorsecondary mb-3  fw-light">9787114111</p>
 
-      <h4 class="colorsecondary">Office</h4>
-      <p class="colorsecondary mb-3 fw-light">0422 243415</p>
+      <h4 class="colorsecondary fontsize24">Email</h4>
+      <p class="colorsecondary mb-3 fw-light">cbe.mithraenterprises@gmail.com</p>
 
-      <h4 class="colorsecondary">Support & Enquiry :</h4>
+      <h4 class="colorsecondary fontsize24">Support & Enquiry :</h4>
       <p class="colorsecondary mb-3 fw-light">nfo@mithraenterprises.com</p>
 
 
@@ -309,23 +317,24 @@
     <div class="col-md-6">
       <div class="">
         <div class="form-card2">
-          <form class="form">
+          <form class="form" method="POST" action="{% url 'home' %}" autocomplete="off">
+            {% csrf_token %}
             <p class="form-heading">Get In Touch</p>
 
             <div class="form-field">
-              <input required="" placeholder="Name" class="input-field" type="text" />
+              {{form.name}}
             </div>
 
             <div class="form-field">
-              <input required="" placeholder="Email" class="input-field" type="email" />
+              {{form.phone}}
             </div>
 
             <div class="form-field">
-              <input required="" placeholder="Mobile" class="input-field" type="number" />
+              {{form.email}}
             </div>
 
             <div class="form-field">
-              <textarea required="" placeholder="Message" cols="30" rows="3" class="input-field"></textarea>
+              {{form.message}}
             </div>
 
             <button class="sendMessage-btn">Send Message</button>
@@ -340,7 +349,7 @@
 <!-- map start -->
 <div class="container my-4">
   <div class="row">
-    <h1 class="colorprimary text-center mb-5 mt-3">Find My Way</h1>
+    <div class="colorprimary text-center mb-5 mt-3 heading-size">Find My Way</div>
     <div class="col-md-12">
       <img src="{% static 'appimages/map.webp' %}" width="100%" height="500px" alt="">
     </div>

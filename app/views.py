@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Category, SubCategory, Product,Awards
+from . form import MessagesForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -7,8 +9,13 @@ from .models import Category, SubCategory, Product,Awards
 def home(request):
     category = Category.objects.all()
     subcategory = SubCategory.objects.filter(sub_category_of__id=1)
-
-    return render(request, 'pages/home.html', {'category': category, 'subcategory': subcategory})
+    form = MessagesForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            add_record = form.save()
+            messages.success(request, "Message sent...")
+            return redirect('home')
+    return render(request, 'pages/home.html', {'category': category, 'subcategory': subcategory,'form':form})
 
 
 def about(request):

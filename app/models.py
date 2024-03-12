@@ -39,10 +39,14 @@ class Product(models.Model):
     product_of = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
     name = models.CharField(max_length=150, null=False, blank=False)
     image = models.ImageField(upload_to=getFileName, null=True, blank=True)
-    front_image = models.ImageField(upload_to=getFileName, null=True, blank=True)
-    left_image = models.ImageField(upload_to=getFileName, null=True, blank=True)
-    right_image = models.ImageField(upload_to=getFileName, null=True, blank=True)
-    back_image = models.ImageField(upload_to=getFileName, null=True, blank=True)
+    front_image = models.ImageField(
+        upload_to=getFileName, null=True, blank=True)
+    left_image = models.ImageField(
+        upload_to=getFileName, null=True, blank=True)
+    right_image = models.ImageField(
+        upload_to=getFileName, null=True, blank=True)
+    back_image = models.ImageField(
+        upload_to=getFileName, null=True, blank=True)
     price = models.CharField(max_length=6, null=False, blank=False)
     description = models.TextField(max_length=500, null=False, blank=False)
     specification = RichTextField(blank=True, null=True)
@@ -52,7 +56,7 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 
 class Awards(models.Model):
     name = models.CharField(max_length=150, null=False, blank=False)
@@ -61,3 +65,11 @@ class Awards(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Messages(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    name = models.CharField(max_length=50, null=False, blank=False)
+    email = models.CharField(max_length=50, null=False, blank=False)
+    phone = models.CharField(max_length=10)
+    message = models.TextField(max_length=500)
