@@ -73,3 +73,13 @@ class Messages(models.Model):
     email = models.CharField(max_length=50, null=False, blank=False)
     phone = models.CharField(max_length=10)
     message = models.TextField(max_length=500)
+
+
+class Testimonial(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    person_image = models.ImageField(
+        upload_to=getFileName, null=True, blank=True)
+    person_name = models.CharField(max_length=50, null=False, blank=False)
+    person_review = models.TextField(max_length=500)
+    person_role_company = models.CharField(
+        max_length=50, null=False, blank=False)

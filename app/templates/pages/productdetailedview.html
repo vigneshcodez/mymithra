@@ -15,11 +15,13 @@
 <!-- product detail starts-->
 <br>
 <br>
+<br>
 
-<div class="container ">
-  <h1 class="text-center colorprimary ">{{product}}</h1>
+<div class="" style="width: 70%; margin: auto;">
+  <h4 class="text-center colorprimary ">{{product}}</h4>
   <div class="row ">
-    <div class="col-md-4 mt-5">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 mt-5">
       <div id="carouselExampleCaptions" class="carousel  slide">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -71,29 +73,23 @@
         </button>
       </div>
     </div>
-    <div class="col-md-8 mt-5 colorprimary">
-      <h3>description</h3>
+    <div class="col-md-12 mt-5 colorsecondary">
+      <h3 class="colorprimary text-center">Description</h3>
       <hr>
-      <p class="colorsecondary">{{product.description}}</p>
+      <p class="colorsecondary mb-5">{{product.description}}</p>
+
+      <h3 class="colorprimary text-center">Specification</h3>
+      <hr>
+      <p class="colorprimary mb-5" style="color: darkblue !important;">{{product.specification|safe}}</p>
+
+
+      <h3 class="colorprimary text-center">Additional info</h3>
+      <hr>
+      <p class="colorsecondary mb-5">{{product.additionalinfo}}</p>
     </div>
   </div>
 
-  <div class="row my-5">
-    <div class="col-md-6 my-3">
-      <h3 class="colorprimary" id="specificationtitle" style="color:rgba(224, 33, 138, 1);">Specification</h3>
 
-    </div>
-    <div class="col-md-6 my-3">
-      <h3 class="colorprimary" id="additioninfotitle" style="color:#03017d ;">additionalinfo</h3>
-
-    </div>
-    <div class="col-6 " id="specification">
-      <p class="">{{product.specification|safe}}</p>
-    </div>
-    <div class="col-6" id="additionalinfo" style="display: none;">
-      <p class="">{{product.additionalinfo}}</p>
-    </div>
-  </div>
 
 
 </div>
@@ -101,7 +97,7 @@
 
 
 
-<script>
+<!-- <script>
 
   let specificationtitle = document.getElementById('specificationtitle')
   let additioninfotitle = document.getElementById('additioninfotitle')
@@ -126,7 +122,7 @@
     additioninfotitle.style.color = 'rgba(224, 33, 138, 1)'
   })
 
-</script>
+</script> -->
 
 {% include 'inc/footer.html' %}
 {% endblock content %}
