@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Category, SubCategory, Product,Awards
+from .models import Category, SubCategory, Product,Awards , Testimonial
 from . form import MessagesForm
 from django.contrib import messages
 
@@ -9,13 +9,14 @@ from django.contrib import messages
 def home(request):
     category = Category.objects.all()
     subcategory = SubCategory.objects.filter(sub_category_of__id=1)
+    testimonial = Testimonial.objects.all()
     form = MessagesForm(request.POST or None)
     if request.method == "POST":
         if form.is_valid():
             add_record = form.save()
             messages.success(request, "Message sent...")
             return redirect('home')
-    return render(request, 'pages/home.html', {'category': category, 'subcategory': subcategory,'form':form})
+    return render(request, 'pages/index.html', {'category': category, 'subcategory': subcategory,'form':form,'testimonial':testimonial})
 
 
 def about(request):

@@ -203,78 +203,33 @@
 <div class="container ">
   <div class="colorprimary text-center mb-5 mt-3 heading-size">Testimonials</div>
   <div class="row ">
+    <div class="owl-carousel owl-theme">
+      {% for item in testimonial %}
+      <div class="item m-3 ">
+        <div class="card p-3 text-center px-4">
 
-    <div class="col-md-4 my-1">
-      <div class="card p-3 text-center px-4">
+          <div class="user-image mb-3 d-flex justify-content-center">
 
-        <div class="user-image mb-3">
+            <div class="testimonial-profile" style="background-image: url({{item.person_image.url}});"></div>
 
-          <img src="https://i.imgur.com/PKHvlRS.jpg" class="rounded-circle" width="80">
+          </div>
 
+          <div class="user-content">
+            <p>{{item.person_review}}</p>
+          </div>
+
+          <div class="ratings">
+            <h5 class="mb-0">{{item.person_name}}</h5>
+            <span class="fw-light">-{{item.person_role_company}}</span>
+
+          </div>
         </div>
-
-        <div class="user-content">
-
-          <h5 class="mb-0">Bruce Hardy</h5>
-          <span>Software Developer</span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.</p>
-
-        </div>
-
       </div>
+      {% endfor %}
     </div>
-
-    <div class="col-md-4 my-1">
-      <div class="card p-3 text-center px-4">
-
-        <div class="user-image mb-3">
-
-          <img src="https://i.imgur.com/PKHvlRS.jpg" class="rounded-circle" width="80">
-
-        </div>
-
-        <div class="user-content">
-
-          <h5 class="mb-0">Bruce Hardy</h5>
-          <span>Software Developer</span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.</p>
-
-        </div>
-
-
-      </div>
-    </div>
-
-
-    <div class="col-md-4 my-1">
-      <div class="card p-3 text-center px-4">
-
-        <div class="user-image mb-3">
-
-          <img src="https://i.imgur.com/PKHvlRS.jpg" class="rounded-circle" width="80">
-
-        </div>
-
-        <div class="user-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.</p>
-        </div>
-
-        <div class="ratings">
-          <h5 class="mb-0">Bruce Hardy</h5>
-          <span class="fw-light">- CEO, Reliance</span>
-
-        </div>
-
-      </div>
-    </div>
-
   </div>
+
+</div>
 </div>
 <!-- testimonial ends -->
 
